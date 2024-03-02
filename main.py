@@ -1,7 +1,7 @@
 from flask import Flask, request, make_response, redirect, render_template
 #render template es para renderizar html dede python esto lo hace con la libreria
 app = Flask(__name__)
-items = ['item1', 'item2', 'item3', 'item4', 'item5']   
+items = ['arroz', 'huevos', 'cafe', 'leche']   
 @app.route('/index')
 def index():
     # El objeto request contiene toda la información que viene del cliente.
