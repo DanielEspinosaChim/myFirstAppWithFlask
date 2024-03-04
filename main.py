@@ -1,9 +1,14 @@
 from flask import Flask, request, make_response, redirect, render_template
 #render template es para renderizar html dede python esto lo hace con la libreria
+from flask import Flask
 from flask_bootstrap import Bootstrap
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 items = ['arroz', 'huevos', 'cafe', 'leche']   
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', error=error)
+
 @app.route('/index')
 def index():
     # El objeto request contiene toda la información que viene del cliente.
