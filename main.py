@@ -1,12 +1,9 @@
 from flask import Flask, request, make_response, redirect, render_template
 #render template es para renderizar html dede python esto lo hace con la libreria
+from flask_bootstrap import Bootstrap
 app = Flask(__name__)
-items = ['arroz', 'huevos', 'cafe', 'leche'] 
-
-@app.errorhandler(404)#para manejar errores ejemplo de ue vayas a una direccion que no existe, el parametro es el codig de error que quieres majear
-def not_found_endpoint(error):
-    return render_template('404.html', error = error)
-
+bootstrap = Bootstrap(app)
+items = ['arroz', 'huevos', 'cafe', 'leche']   
 @app.route('/index')
 def index():
     # El objeto request contiene toda la información que viene del cliente.
